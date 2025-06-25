@@ -11,6 +11,8 @@ let allChar = document.getElementById("all-characters")
 let alphaNum = document.getElementById("alpha-numerical")
 let numOnly = document.getElementById("numbers-only")
 
+let hasPasswords = false
+
 generatebutton.addEventListener("click", function() {
     let number = document.getElementById("password-length")
     let passLength = parseInt(number.value)
@@ -38,6 +40,7 @@ generatebutton.addEventListener("click", function() {
         answerEl2.textContent = password2
         }
     }
+    hasPasswords = true
 })
 
 let lightMode = document.getElementById("light")
@@ -52,39 +55,43 @@ darkMode.addEventListener("click", function () {
 })
 
 answerEl1.addEventListener("click", function () {
-    let password1 = document.getElementById("answer-1")
-    writeClipboardText(password1.textContent)
-    async function writeClipboardText(text) {
-        try {
-            await navigator.clipboard.writeText(text);
-        } catch (error) {
-            console.error(error.message);
+    if (hasPasswords === true) {
+        let password1 = document.getElementById("answer-1")
+        writeClipboardText(password1.textContent)
+        async function writeClipboardText(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+            } catch (error) {
+                console.error(error.message);
+            }
         }
-    }
-    
-    const copied1 = document.getElementById("copied1")
-        copied1.style.display = 'block'
 
-        setTimeout(() => {
-        copied1.style.display = 'none';
-      }, 1000);
+        const copied1 = document.getElementById("copied1")
+            copied1.style.display = 'block'
+
+            setTimeout(() => {
+            copied1.style.display = 'none';
+        }, 1000);
+    }
 })
 
 answerEl2.addEventListener("click", function () {
-    let password2 = document.getElementById("answer-2")
-    writeClipboardText(password2.textContent)
-    async function writeClipboardText(text) {
-        try {
-            await navigator.clipboard.writeText(text)
-        } catch (error) {
-            console.error(error.message)
+    if (hasPasswords === true) {
+        let password2 = document.getElementById("answer-2")
+        writeClipboardText(password2.textContent)
+        async function writeClipboardText(text) {
+            try {
+                await navigator.clipboard.writeText(text)
+            } catch (error) {
+                console.error(error.message)
+            }
         }
+
+        const copied2 = document.getElementById("copied2")
+            copied2.style.display = 'block'
+
+            setTimeout(() => {
+            copied2.style.display = 'none';
+        }, 1000);
     }
-
-    const copied2 = document.getElementById("copied2")
-        copied2.style.display = 'block'
-
-        setTimeout(() => {
-        copied2.style.display = 'none';
-      }, 1000);
 })
