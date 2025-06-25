@@ -1,0 +1,137 @@
+[data-theme="darkmode"] {
+    --background: url("./images/encryption-dark.jpg");
+    --back-color: #1E2B22;
+    --border-color: white;
+    --title-color: white;
+    --bold-color: #4ACDD9;
+    --text-color: lightgray;
+    --link-hover-color: #94FFF8;
+    --button-color: #35A3BD;
+    --button-text-color: white;
+    --button-hover-color: #38B9D6;
+    --answer-color: #2B4033;
+    --copied-color: #E4E963;
+
+}
+
+[data-theme="lightmode"] {
+    --background: url("./images/encryption-light.jpg");
+    --back-color: #FAF9F6;
+    --border-color: #1E2B22;
+    --title-color: black;
+    --bold-color: #2177B0;
+    --text-color: #595959;
+    --link-hover-color: #4DBAF0;
+    --button-color: #1157A1;
+    --button-text-color: white;
+    --button-hover-color: #126BC9;
+    --answer-color: #E8E5E3;
+    --copied-color: #DE6A1D;
+}
+
+
+body {
+    margin: 0;
+    background-image: var(--background);
+    background-color: rgba(255,255,255,0.1);
+    background-blend-mode: lighten;
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container {
+    width: 450px;
+    height: 550px;
+    border: var(--border-color) solid 5px;
+    border-radius: 10px;
+    background-color: var(--back-color);
+    color: var(--title-color);
+    margin: 50px auto;
+    padding: 5px 30px;
+}
+
+h1 {
+    margin-top: 60px;
+}
+
+#title-bold {
+    color: var(--bold-color);
+}
+
+#modes {
+    color: var(--text-color);
+    font-size: 12px;
+    text-align: right;
+}
+
+#light, #dark {
+    font-style: italic;
+    color: var(--bold-color);
+    text-decoration: underline;
+}
+
+#light:hover, #dark:hover {
+    color: var(--link-hover-color);
+}
+
+h2 {
+    font-size: 17px;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    font-weight: bold;
+    font-size: 16px;
+    margin: 30px 10px 15px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+#types {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+#password-length {
+    font-size: 14px;
+    width: 30px;
+}
+
+input[type="radio"] {
+    accent-color: var(--bold-color);
+}
+
+.answers {
+    display: flex;
+    justify-content: space-between;
+    border-top: var(--text-color) solid 1px;
+    margin: 30px 0 100px 0; 
+    padding-top: 10px;
+}
+
+#answer-1, #answer-2 {
+    background-color: var(--answer-color);
+    color: var(--bold-color);
+    width: 180px;
+    height: 25px;
+    border-radius: 5px;
+    padding: 8px 7px 8px 15px;
+    margin-bottom: 5px;
+}   
+
+#copied1, #copied2 {
+    display: none;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 0px;
+    color: var(--copied-color);
+}
