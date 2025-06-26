@@ -33,6 +33,7 @@
 body {
     margin: 0;
     background-image: var(--background);
+    background-size: cover;
     background-color: rgba(255,255,255,0.1);
     background-blend-mode: lighten;
     background-size: cover;
@@ -40,7 +41,7 @@ body {
 }
 
 #container {
-    width: 450px;
+    width: 550px;
     height: 550px;
     border: var(--border-color) solid 5px;
     border-radius: 10px;
@@ -121,10 +122,10 @@ input[type="radio"] {
 #answer-1, #answer-2 {
     background-color: var(--answer-color);
     color: var(--bold-color);
-    width: 180px;
+    width: 230px;
     height: 25px;
     border-radius: 5px;
-    padding: 8px 7px 8px 15px;
+    padding: 8px 7px 6px 15px;
     margin-bottom: 5px;
 }   
 

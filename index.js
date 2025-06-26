@@ -16,6 +16,14 @@ let hasPasswords = false
 generatebutton.addEventListener("click", function() {
     let number = document.getElementById("password-length")
     let passLength = parseInt(number.value)
+    if (passLength < 4) {
+        passLength = 4
+        number.value = 4
+    } else if (passLength > 20) {
+        passLength = 20
+        number.value = 20
+    }
+
     let password1 = ""
     let password2 = ""
     if (allChar.checked) {
@@ -40,6 +48,7 @@ generatebutton.addEventListener("click", function() {
         answerEl2.textContent = password2
         }
     }
+
     hasPasswords = true
 })
 
